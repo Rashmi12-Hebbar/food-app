@@ -13,12 +13,15 @@ export class LoginComponent implements OnInit {
 
   hide=true;
   constructor(private userservice:UserserviceService,private router:Router) { }
+  
+  
 
   ngOnInit() {
+    localStorage.clear();
   }
-  UserFormSubmit(FormData){
-    console.log('FormData',FormData)
-    this.userservice.addUser1(FormData.form.value).subscribe((reponse)=>{
+  UserFormSubmit(FormData) {
+    console.log('FormData', FormData)
+    this.userservice.addUser1(FormData.form.value).subscribe((reponse) => {
       console.log(reponse);
       if(reponse['result'].token) {
         localStorage.setItem('token',reponse['result'].token);
@@ -28,5 +31,5 @@ export class LoginComponent implements OnInit {
 
 
   }
-  
+
 }

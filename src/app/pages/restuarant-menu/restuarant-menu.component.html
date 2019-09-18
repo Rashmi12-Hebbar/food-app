@@ -1,0 +1,19 @@
+<div class="row mt-3">
+  <div class="col-md-5" style="height: 567px;overflow:auto">
+    <h5 class="mb-3">{{selectedResto?.restaurants_name}}&nbsp; / &nbsp;Menu List</h5>
+    <mat-list role="list">
+      <mat-list-item role="listitem"  *ngFor="let item of menuList" style="margin-bottom: 3.5rem;cursor:pointer" (click)="onSelectDishFromMenu(item)">
+        <mat-card class="w-100" [ngClass]="{'background': selectedDish?.mid == item.mid }">
+          <img [src]="item.menuurl" width="50" height="50" style="object-fit: none">
+          <p class="d-inline ml-2">
+            {{item.menu_name}}
+          </p>
+        </mat-card>
+      </mat-list-item>
+
+    </mat-list>
+  </div>
+  <div class="col-md-7">
+        <app-dish-descriptions [dishItem]='selectedDish' *ngIf="selectedDish"></app-dish-descriptions>
+  </div>
+</div>
