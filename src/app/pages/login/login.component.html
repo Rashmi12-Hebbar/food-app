@@ -1,23 +1,23 @@
-<div class="row">
-    <div class="col">
-        <mat-card class="w-50 card-container">
-            <mat-card-header>
-                <mat-card-title>User Login</mat-card-title>
-            </mat-card-header>
-            
-            <mat-card-content>
-                <div class="example-container">
-                    <mat-form-field>
-                        <input matInput placeholder="username">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </mat-form-field>
-                </div>
-                <button mat-raised-button color="accent">signin</button>
-                <button mat-raised-button color="accent" class="ml-2">signup</button>
-            </mat-card-content>
-        </mat-card>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form #userforms="ngForm" (ngSubmit)="UserFormSubmit(userforms)">
+        <div class="form-group">
+          <label for="username">username:</label>
+          <input type="username" class="form-control" id="username" ngModel name="username">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input required type="password" class="form-control" id="pwd" name="password" ngModel #password="ngModel">
+          <span class="primary" *ngIf="!password.valid">please enter your password</span>
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox"> Remember me
+          </label>
+        </div>
+        <button type="submit" class="btn-primary">Submit</button>
+      </form>
     </div>
+  </div>
 </div>
