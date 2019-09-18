@@ -1,0 +1,20 @@
+<h5 class="text-center mt-2">Restaurants</h5>
+<div class="row">
+  <div class="col-md-4 mb-2 mt-2" *ngFor="let item of restaurantList">
+    <mat-card>
+      <div class="row">
+        <div class="col">
+          <img [src]="item.imageUrl" width="50" height="50"  style="object-fit: none">
+          <p class="ml-2 d-inline">{{item.restaurants_name}}</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-primary" (click)="onVisitResto(item)">Visit</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+</div>

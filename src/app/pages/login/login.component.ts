@@ -10,19 +10,20 @@ import { UserserviceService } from 'src/app/userservice.service';
 export class LoginComponent implements OnInit {
 
 
-  hide=true;
-  constructor(private userservice:UserserviceService) { }
+  hide = true;
+  constructor(private userservice: UserserviceService) { }
 
   ngOnInit() {
+    localStorage.clear();
   }
-  UserFormSubmit(FormData){
-    console.log('FormData',FormData)
-    this.userservice.addUser1(FormData.form.value).subscribe((reponse)=>{
+  UserFormSubmit(FormData) {
+    console.log('FormData', FormData)
+    this.userservice.addUser1(FormData.form.value).subscribe((reponse) => {
       console.log(reponse);
-      localStorage.setItem('token',reponse['result'].token)
-     }); 
+      localStorage.setItem('token', reponse['result'].token)
+    });
 
 
   }
-  
+
 }
