@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserserviceService } from 'src/app/userservice.service';
+
 
 @Component({
   selector: 'app-login',
@@ -9,9 +11,18 @@ export class LoginComponent implements OnInit {
 
 
   hide=true;
-  constructor() { }
+  constructor(private userservice:UserserviceService) { }
 
   ngOnInit() {
   }
+  UserFormSubmit(FormData){
+    console.log('FormData',FormData)
+    this.userservice.addUser1(FormData.form.value).subscribe((reponse)=>{
+      console.log(reponse);
+      localStorage.setItem('token',reponse['result'].token)
+     }); 
 
+
+  }
+  
 }
