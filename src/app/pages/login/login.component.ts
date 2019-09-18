@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserserviceService } from 'src/app/userservice.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
 
   hide=true;
-  constructor(private userservice:UserserviceService) { }
+  constructor(private userservice:UserserviceService,private router:Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,10 @@ export class LoginComponent implements OnInit {
     console.log('FormData',FormData)
     this.userservice.addUser1(FormData.form.value).subscribe((reponse)=>{
       console.log(reponse);
-      localStorage.setItem('token',reponse['result'].token)
+      if(reponse['result'].token) {
+        localStorage.setItem('token',reponse['result'].token);
+        this.router.navigate(['/restuarant'])
+      }
      }); 
 
 
