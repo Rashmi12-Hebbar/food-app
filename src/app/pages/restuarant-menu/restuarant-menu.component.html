@@ -1,6 +1,6 @@
 <div class="row mt-3">
   <div class="col-md-5" style="height: 567px;overflow:auto">
-    <h5 class="mb-3">{{selectedResto?.restaurants_name}}&nbsp; / &nbsp;Menu List</h5>
+    <!-- <h5 class="mb-3">{{selectedResto?.restaurants_name}}&nbsp; / &nbsp;Menu List</h5> -->
     <mat-list role="list">
       <mat-list-item role="listitem"  *ngFor="let item of menuList" style="margin-bottom: 3.5rem;cursor:pointer" (click)="onSelectDishFromMenu(item)">
         <mat-card class="w-100" [ngClass]="{'background': selectedDish?.mid == item.mid }">

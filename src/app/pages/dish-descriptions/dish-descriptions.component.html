@@ -1,5 +1,10 @@
+<app-windowmodel [ismodel]="ismodel" [totalprice] ="amount" (myevent)="evfuntion()"></app-windowmodel>
+
 <mat-card class="example-card">
+    <!-- <form #userforms= "ngForm" (ngSubmit)="onUserFormSubmit(userforms)"> -->
   <mat-card-header>
+     
+
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{dishItem.menu_name}}</mat-card-title>
     <mat-card-subtitle>Price: Rs.{{dishItem.price}}</mat-card-subtitle>
@@ -14,6 +19,9 @@
     <button class="btn btn-danger" [disabled]='cartCount == 0' (click)="removeFromCart()">Remove</button>
     <p class="d-inline ml-4 round-b">{{cartCount}}</p>
     <button class="btn btn-success ml-4" (click)="addToCart()">Add to Cart</button>
+    <button class="btn btn-success ml-4" (click)="payment()">payment</button>
     <p class="d-inline ml-4">Totlal Price: Rs.{{cartPrice}}</p>
   </mat-card-actions>
+    <!-- </form> -->
 </mat-card>
+

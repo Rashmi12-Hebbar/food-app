@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { RestuarantComponent } from './pages/restuarant/restuarant.component';
 import { RestuarantMenuComponent } from './pages/restuarant-menu/restuarant-menu.component';
 import { DishDescriptionsComponent } from './pages/dish-descriptions/dish-descriptions.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { WindowmodelComponent } from './pages/windowmodel/windowmodel.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { DishDescriptionsComponent } from './pages/dish-descriptions/dish-descri
     RegisterComponent,
     RestuarantComponent,
     RestuarantMenuComponent,
-    DishDescriptionsComponent
+    DishDescriptionsComponent,
+    CheckoutComponent,
+    WindowmodelComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { DishDescriptionsComponent } from './pages/dish-descriptions/dish-descri
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule, MatListModule
+    FormsModule, MatListModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

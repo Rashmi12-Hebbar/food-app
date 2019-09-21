@@ -12,12 +12,12 @@ export class RestuarantMenuComponent implements OnInit {
   selectedDish = null;
   selectedResto = null;
   constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(res => {
-      console.log(res)
-      let resto = restaurantList;
-      this.selectedResto = resto.find(r => r.rid == res.rid)//
-    })
-  }
+    // this.route.params.subscribe(res => {
+    //   console.log(res)
+    //   let resto = restaurantList;
+    //   this.selectedResto = resto.find(r => r.rid == res.rid)//
+    // })
+   }
 
   ngOnInit() {
     this.menuList = menuList;

@@ -18,8 +18,19 @@ export class UserserviceService {
         })
    })
 }
+
+addCard(obj) {
+  return this.httpClient.post(environment.apiPostCard,obj, {
+   headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+ })
+}
 addUser1(obj) {
-  return this.httpClient.post(environment.apiPostToken ,obj, {
+  return this.httpClient.post(environment.apiPostToken,{
+    "username":"su",
+    "password":"ac"
+  } ,{
    headers: new HttpHeaders({
         'Content-Type':  'application/json',
       })

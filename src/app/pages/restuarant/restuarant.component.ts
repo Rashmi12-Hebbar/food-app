@@ -18,9 +18,6 @@ export class RestuarantComponent implements OnInit {
   }
 }
 
-
-
-
 export let restaurantList: any = [
   {
     "restaurants_name": "a2b",

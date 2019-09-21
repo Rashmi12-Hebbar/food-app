@@ -8,7 +8,8 @@ export const environment = {
   
 
   apiPostUser :`${BASE_URL}api/adduser`,
-  apiPostToken : `${BASE_URL}token/generate-token`
+  apiPostToken : `${BASE_URL}token/generate-token`,
+  apiPostCard : `${BASE_URL}api/checkcardname`
 
 }
 /*

@@ -1,0 +1,39 @@
+<!-- Button to Open the Modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button> -->
+<div class="modal modalwindow" *ngIf="ismodel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+                <form #userforms= "ngForm" (ngSubmit)="onUserFormSubmit(userforms)">
+            <div class="modal-header">
+                <h4 class="modal-title">Accepted Cards</h4>
+                <button type="button" class="close" (click)="eventfunction()">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div>
+                    <label for="cardname"> cardname</label>
+                    <input type="text" id="cardname" name="cardname" ngModel >
+                </div>
+                <div>
+                    <label for="price">total price</label>
+                    <input type="text" id="price" name="price" [(ngModel)] = "totalprice">
+                </div>
+                
+                <div>
+                    <label for="cvv">cvv</label>
+                    <input type="text" id="cvv" name="cvv" ngModel>
+                    </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="onUserFormSubmit(userforms)">submit</button>
+            </div>
+                </form>
+        </div>
+    </div>
+</div>
