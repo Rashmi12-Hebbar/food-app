@@ -16,7 +16,11 @@ export class RegisterComponent implements OnInit {
   }
   onUserFormSubmit(FormData){
     console.log('FormData',FormData)
-    this.userservice.addUser(FormData.form.value).subscribe((reponse)=>{
+    let requestobj={
+      ...FormData.form.value,userType:"1"
+    }
+
+    this.userservice.addUser(requestobj).subscribe((reponse)=>{
       console.log(reponse);
      }); 
 

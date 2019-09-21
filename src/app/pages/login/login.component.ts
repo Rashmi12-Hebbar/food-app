@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
   UserFormSubmit(FormData) {
     console.log('FormData', FormData)
-    this.userservice.addUser1(FormData.form.value).subscribe((reponse) => {
+    this.userservice.loginUser(FormData.form.value).subscribe((reponse) => {
       console.log(reponse);
       if(reponse['result'].token) {
         localStorage.setItem('token',reponse['result'].token);

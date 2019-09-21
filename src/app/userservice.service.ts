@@ -26,10 +26,9 @@ addCard(obj) {
       })
  })
 }
-addUser1(obj) {
+loginUser(obj) {
   return this.httpClient.post(environment.apiPostToken,{
-    "username":"su",
-    "password":"ac"
+    ...obj
   } ,{
    headers: new HttpHeaders({
         'Content-Type':  'application/json',
