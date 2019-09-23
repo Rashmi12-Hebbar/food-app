@@ -19,7 +19,9 @@ export class AddrestuarantComponent implements OnInit {
   }
   addRestuarant() {
     this.isModalWindow = true;
+    this.selectedResto={}
   }
+  
   onModalClose(isModalClose) {
     this.isModalWindow = isModalClose;
   }
@@ -42,9 +44,16 @@ export class AddrestuarantComponent implements OnInit {
 
   }
   addRestruarantSubmit(formdata) {
-    console.log('formdata', formdata.form.value),
-      this.Service.addRestaurants(formdata.form.value).subscribe((reponse) => {
-        console.log(reponse);
-      });
+    console.log('formdata', formdata.form.value)
+      // this.Service.addRestaurants(formdata.form.value).subscribe((reponse) => {
+      //   console.log(reponse);
+      // });
+  }
+  deleteResturant(id){
+    this.Service.deleteResturant(id).then(res=>{
+      console.log(res);
+
+    });
+
   }
 }

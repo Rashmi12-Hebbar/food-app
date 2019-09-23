@@ -11,7 +11,9 @@ export const environment = {
   apiPostToken : `${BASE_URL}token/generate-token`,
   apiPostCard : `${BASE_URL}api/checkcardname`,
   apiGetRestuarants:`${BASE_URL}api/getRestaurants`,
-  apiPostRestuarants:`${BASE_URL}api/addrestaurants`
+  apiPostRestuarants:`${BASE_URL}api/addrestaurants`,
+  apiPutResturants:`${BASE_URL}api/updateRestaurants`,
+  apiDeleteResturants:`${BASE_URL}api/deleteRestaurants/`
 }
 /*
  * For easier debugging in development mode, you can import the following file

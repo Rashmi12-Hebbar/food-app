@@ -16,8 +16,8 @@
       <td>{{addrestuarant.restid}}</td>
       <td><img src="{{addrestuarant.restaurant_url}}" alt=""></td>
 
-      <button type="submit" class="btn-primary" (click)="onModalToggle(addrestuarant)">edit</button>
-      <button type="submit" class="btn-primary">delete</button>
+      <button type="submit"  class= "btn btn-primary" (click)="onModalToggle(addrestuarant)">edit</button>
+      <button type="submit" class=" btn btn-primary" (click)="deleteResturant(addrestuarant.id)">delete</button>
     </tr>
 
   </table>
