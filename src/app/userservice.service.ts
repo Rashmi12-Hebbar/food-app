@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -26,6 +27,24 @@ addCard(obj) {
       })
  })
 }
+addRestaurants(obj){
+  return this.httpClient.post(environment.apiPostRestuarants,obj,{
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  })
+}
+getRestaurants(): Observable<any> {
+  return this.httpClient.get(environment. apiGetRestuarants,  {headers: new HttpHeaders({
+    'Authorization':'Bearer '+localStorage.getItem('token'),
+    
+  })});
+}
+
+    
+
+
+
 loginUser(obj) {
   return this.httpClient.post(environment.apiPostToken,{
     ...obj

@@ -14,6 +14,9 @@ import { RestuarantMenuComponent } from './pages/restuarant-menu/restuarant-menu
 import { DishDescriptionsComponent } from './pages/dish-descriptions/dish-descriptions.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { WindowmodelComponent } from './pages/windowmodel/windowmodel.component';
+import { AddrestuarantComponent } from './addrestuarant/addrestuarant.component';
+import { PopupComponent } from './popup/popup.component';
+
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { WindowmodelComponent } from './pages/windowmodel/windowmodel.component'
     RestuarantMenuComponent,
     DishDescriptionsComponent,
     CheckoutComponent,
-    WindowmodelComponent
+    WindowmodelComponent,
+    AddrestuarantComponent,
+    PopupComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,9 @@ import { WindowmodelComponent } from './pages/windowmodel/windowmodel.component'
     MatButtonModule,
     HttpClientModule,
     FormsModule, MatListModule,
+    
+    
+    
     
   ],
   providers: [],

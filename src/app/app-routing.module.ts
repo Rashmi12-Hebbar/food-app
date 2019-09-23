@@ -6,6 +6,8 @@ import { RestuarantComponent } from './pages/restuarant/restuarant.component';
 import { RestuarantMenuComponent } from './pages/restuarant-menu/restuarant-menu.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { WindowmodelComponent } from './pages/windowmodel/windowmodel.component';
+import { AddrestuarantComponent } from './addrestuarant/addrestuarant.component';
+import { PopupComponent } from './popup/popup.component';
 
 const routes: Routes = [
 
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'restuarant', component: RestuarantComponent },
   { path: 'resto-menu/:rid', component: RestuarantMenuComponent },
   // { path : 'checkout', component:CheckoutComponent},
-  { path : 'windowmodel', component:WindowmodelComponent}
+  { path : 'windowmodel', component:WindowmodelComponent},
+  {path :'addrestuarant', component:AddrestuarantComponent},
+  {path: 'popup', component: PopupComponent}
 ];
 
 @NgModule({
