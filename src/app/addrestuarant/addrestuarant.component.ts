@@ -8,18 +8,22 @@ import { UserserviceService } from '../userservice.service';
   styleUrls: ['./addrestuarant.component.css']
 })
 export class AddrestuarantComponent implements OnInit {
-isModalWindow:boolean;
-  addrestuarants=[]
+  isModalWindow: boolean;
+  addrestuarants = [];
+  selectedResto = null;
   constructor(private Service: UserserviceService) { }
 
-  onModalToggle(){
-    this.isModalWindow=true;
+  onModalToggle(addrestuarant) {
+    this.isModalWindow = true;
+    this.selectedResto = JSON.parse(JSON.stringify(addrestuarant));
   }
-
-  onModalClose(isModalClose){
-    this.isModalWindow=isModalClose;
+  addRestuarant() {
+    this.isModalWindow = true;
   }
-  ngOnChanges(change:SimpleChange){
+  onModalClose(isModalClose) {
+    this.isModalWindow = isModalClose;
+  }
+  ngOnChanges(change: SimpleChange) {
     console.log("simplechanges", change);
   }
   ngOnInit() {
@@ -29,7 +33,7 @@ isModalWindow:boolean;
   ongetRestaurants() {
     this.Service.getRestaurants().subscribe((res) => {
       console.log('Res', res);
-      this.addrestuarants=res;
+      this.addrestuarants = res;
       console.log(this.addrestuarants);
       // this.restaurants= res.result;
     });
@@ -37,17 +41,10 @@ isModalWindow:boolean;
 
 
   }
-addRestruarantSubmit(FormData){
-    console.log('FormData',FormData.form.value ),
-    
-
-    this.Service.addRestaurants(FormData.form.value).subscribe((reponse) => {
-      console.log(reponse);
-    
-      
-
-    });
-    
+  addRestruarantSubmit(formdata) {
+    console.log('formdata', formdata.form.value),
+      this.Service.addRestaurants(formdata.form.value).subscribe((reponse) => {
+        console.log(reponse);
+      });
   }
- 
 }

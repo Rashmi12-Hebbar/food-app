@@ -2,29 +2,46 @@
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
         Open modal
       </button> -->
-      
-      <!-- The Modal -->
-      <div class="custom-modal" id="myModal" *ngIf="isModalWindow">
-        <div class="modal-dialog">
-          <div class="modal-content">
-      
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Heading</h4>
-              <button type="button" class="close" data-dismiss="modal"  (click)="onclosehandled()">&times;</button>
-            </div>
-      
-            <!-- Modal body -->
-            <div class="modal-body">
-             
-              <ng-content select="content"></ng-content>
-            </div>
-      
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="onclosehandled()">Close</button> -->
-            </div>
-      
-          </div>
-        </div>
+
+<!-- The Modal -->
+<div class="custom-modal" id="myModal" *ngIf="isModalWindow">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="onclosehandled()">&times;</button>
       </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #userforms="ngForm" (ngSubmit)="addRestruarantSubmit(userforms)">
+          <div class="form-group">
+            <label for="restaurants_name">restaurants_name:</label>
+            <input type="restaurants_name" class="form-control" id="restaurants_name" [(ngModel)]="formValues['restaurants_name']"
+              name="restaurants_name">
+
+          </div>
+          <div class="form-group">
+            <label for="restid">restid:</label>
+            <input type="number" class="form-control" id="restid" [(ngModel)]="formValues['restid']" name="restid">
+
+          </div>
+          <div class="form-group">
+            <label for="restaurant_url">restaurant_url:</label>
+            <input type="restaurant_url" class="form-control" id="restaurant_url" [(ngModel)]="formValues['restaurant_url']"
+              name="restaurant_url">
+          </div>
+          <button type="submit" class="btn btn-success float-right">add</button>
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="onclosehandled()">Close</button> -->
+      </div>
+
+    </div>
+  </div>
+</div>

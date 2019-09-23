@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 display='none';
-
+@Input() formValues;
 @Input() isModalWindow:boolean;
 @Output() isModalClose = new EventEmitter<boolean>();
 openModalWindow:boolean;

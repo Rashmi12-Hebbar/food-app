@@ -10,14 +10,14 @@ export class WindowmodelComponent implements OnInit, OnChanges {
 
   @Input() ismodel: boolean;
   @Output() myevent = new EventEmitter<boolean>();
-  @Input() totalprice : any;
+  @Input() totalprice: any;
   res;
   constructor(private userservice: UserserviceService) { }
 
   ngOnInit() {
   }
 
-  ngOnChanges()  {
+  ngOnChanges() {
     console.log("v", this.totalprice);
   }
 
@@ -29,11 +29,11 @@ export class WindowmodelComponent implements OnInit, OnChanges {
     console.log('userforms', userforms)
     this.userservice.addCard(userforms.form.value).subscribe((reponse) => {
       this.res = reponse;
-      if(this.res.statusCode== 200)
-           alert("sucessfull payment")
-          else{
-      alert("unsucessfull")
-          }
+      if (this.res.statusCode == 200)
+        alert("sucessfull payment")
+      else {
+        alert("unsucessfull")
+      }
       console.log(reponse);
     });
 
